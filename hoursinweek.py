@@ -3,18 +3,22 @@ import time
 week_hours = 7*24 
 waking_hours = 7*14 
 tasks = input("How many tasks do you have? ") 
-time_per_task = [] 
+task_details = [] 
 time_for_tasks = 0 
 counter = 1 
 
 for task in range (int(tasks)): 
-	time_per_task.append(int(input("Enter how many hours you will need for task %s: "%(str(counter))))) 
+	task_name = input("Enter the name or nature of task %s: "%(str(counter))) 
+	task_time = int(input("Enter how many hours you will need for task %s: "%(str(counter))))
+	task_details.append([task_name, task_time])
 	counter += 1 
-for x in time_per_task:
-	time_for_tasks += x 
+for x in task_details:
+	time_for_tasks += x[1]
 
 free_time = waking_hours - time_for_tasks
 
+for task in task_details:
+	print("You will need to %s for %s hours."%(task[0], task[1]))
 print("You will need a total of %s hours to complete all you tasks, leaving %s hours of your week free."%(time_for_tasks, free_time))
 time.sleep(4)
 while time_for_tasks > 0:
