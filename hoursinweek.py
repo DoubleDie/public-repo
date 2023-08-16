@@ -8,7 +8,7 @@ time_for_tasks = 0
 counter = 1 
 
 for task in range (int(tasks)): 
-	time_per_task.append(int(input("Enter how many hours you will need for task " + str(counter) + ': '))) 
+	time_per_task.append(int(input("Enter how many hours you will need for task %s: "%(str(counter))))) 
 	counter += 1 
 for x in time_per_task:
 	time_for_tasks += x 
